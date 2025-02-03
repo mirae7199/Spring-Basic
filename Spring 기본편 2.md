@@ -42,7 +42,8 @@ public class OrderServiceImpl implements OrderService {
 지금까지는 OrderServiceImpl가 DiscountPolicy만을 의존하는 줄 알았다.
 
 하지만 실제 의존관계를 보면 
-![[Pasted image 20250113214105.png]]
+
+![Image](https://github.com/user-attachments/assets/3111f585-609d-4eca-af15-66b67b61078c)
 OrderServiceImpl는 DIscountPolicy뿐 아니라 RateDiscountPolicy, FixDiscountPolicy까지 의존하고 있던게 아닌가!
 
 DIP 위반!
@@ -57,7 +58,7 @@ OCP 위반!
 
 ### 인터페이스만 의존하도록 코드 변경
 
-![[Pasted image 20250113215209.png]]
+![Image](https://github.com/user-attachments/assets/79fd879d-b68c-4984-a256-a01ad8ee96d9)
 
 **인터페이스에만 의존하도록 코드 변경**
 ~~~ java
@@ -144,7 +145,8 @@ public class MemberServiceImpl implements MemberService {
 - MemberService는 어떤 구현체가 들어오든 자신에 로직만 수행하면 된다.
 
 **클래스 다이어그램**
-![[Pasted image 20250114111451.png]]
+
+![Image](https://github.com/user-attachments/assets/cc2ee2a3-6a58-43d8-baa3-06f005eb54bb)
 - AppConfig는 어떤 구현체를 쓸 것인지 결정한다.
 - 또한 생성자 주입을 통해서 구현체를 주입해준다.
 - DIP 완성: MemberService는 인터페이스 MemberRepository만 의존한다.
