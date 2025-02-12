@@ -12,19 +12,19 @@ ApplicationContext ac = new AnnotatationConfigApplicatioContext(AppConfig.class)
 ### 스프링 컨테이너의 생성 과정
 
 **1. 스프링 컨테이너 생성**
-![[Pasted image 20250120105454.png]]
+![Image](https://github.com/user-attachments/assets/0125e39d-1043-40f6-ab4a-e30142aea76c)
 - new AnnotationConfigApplicationContext(AppConfig.class);
 - 스프링 컨테이너를 생성할 때는 구성 정보를 넣어줘야 하는데 여기서는 AppConfig 구성 정보를 넣어주었다.
 - AppConfig에서 @Bean으로 설정했던 메서드들이 이곳 스프링 컨테이너에 저장되는 것이다.
 
 **2. 스프링 빈 등록**
-![[Pasted image 20250120110528.png]]
+![Image](https://github.com/user-attachments/assets/dd87d14d-2340-4de6-9e2d-1da1482f554c)
 - AppConfig에서 @Bean으로 설정했던 메서드들이 스프링 컨테이너로 저장.
 	- 빈 이름은 AppConfig에서 @Bean으로 설정했던 메서드의 이름으로 저장된다. (기본값) (빈 이름을 직접 부여할 수 도 있음  @Bean(name=“memberService2) )
 	- 빈 객체는 AppConfig에서 @Bean으로 설정했던 메서드의 반환 타입이다.
 
 **스프링 빈 의존관계 설정**
-![[Pasted image 20250120111306.png]]
+![Image](https://github.com/user-attachments/assets/6e16d1cb-3d9e-4a0c-9b07-cc5f49e366d0)
 - 스프링 컨테이너는 설정 정보를 참고해서 의존관계를 주입(DI)한다.
 - 뒤에서 다시 설명(싱글톤 컨테이너)
 
@@ -223,7 +223,7 @@ public class ApplicationContextSameBeanFindTest {
 
 ### 스프링 빈 조회 - 상속 관계
 
-![[Pasted image 20250120131831.png]]
+![Image](https://github.com/user-attachments/assets/1fa32b74-1319-4bbd-b990-94b720cba3b8)
 
 부모 타입으로 조회하면, 자식 타입도 함께 조회된다. 
 따라서 Object타입으로 조회하면 모든 스프링 빈을 조회한다.
@@ -305,7 +305,7 @@ public class ApplicationContextExtendsFindTest {
 		- Map\<String, Object> beansOfType = ac.getBeansOfType(Object.class);
 
 ### BeanFactory와 ApplicationContext
-![[Pasted image 20250120133815.png]]
+![Image](https://github.com/user-attachments/assets/f2c2d09b-444f-42c4-9363-e0b38f585031)
 
 **BeanFactory**
 - 스프링 컨테이너의 최상위 컨테이너이다.
@@ -313,7 +313,7 @@ public class ApplicationContextExtendsFindTest {
 - getBean() 제공
 
 **ApplicationContext가 제공하는 부가기능**
-![[Pasted image 20250120134049.png]]
+![Image](https://github.com/user-attachments/assets/67da93f0-64c2-42da-92c6-fd48521b410c)
 - MessageSource
 	- 메시지소스를 활용한 국제화 기능
 	- 한국 -> 한국어, 영어권 -> 영어
@@ -328,7 +328,7 @@ public class ApplicationContextExtendsFindTest {
 	- 파일, 클래스패스, 외부 등에서 리소스를 편리하게 조회
 
 ### 다양한 설정 형식 지원 - 자바 코드, XML 
-![[Pasted image 20250120134519.png]]
+![Image](https://github.com/user-attachments/assets/44b70aec-5c8e-400a-8b1f-abe106991882)
 
 ### 스프링 빈 설정 메타 정보 - BeanDefinition
 - 역할과 구현을 개념적으로 나눈 것
@@ -338,5 +338,5 @@ public class ApplicationContextExtendsFindTest {
 	- @Bean, \<bean> 당 각각 하나씩 메타 정보가 생성된다.
 - 스프링 컨테이너는 이 메타정보를 기반으로 스프링 빈을 생성한다.
 
-![[Pasted image 20250120134929.png]]
+![Image](https://github.com/user-attachments/assets/93d1b646-e461-4b68-9718-50bb28714dee)
 
