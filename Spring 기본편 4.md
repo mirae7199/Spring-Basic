@@ -1,7 +1,7 @@
 ### 웹 애플리케이션과 싱글톤
 웹 애플리케이션은 보통 여러 고객이 동시에 요청을 한다.
 
-![[Pasted image 20250121130808.png]]
+![Image](https://github.com/user-attachments/assets/a604bafc-e3cc-4fe2-aecc-04ce39c67cf0)
 
 **스프링 없는 순수한 DI 컨테이너 테스트**
 ~~~ java
@@ -147,7 +147,7 @@ public class SpringContainerAndSingleton {
 ~~~
 
 **싱글톤 컨테이너 적용 후**
-![[Pasted image 20250121135901.png]]
+![Image](https://github.com/user-attachments/assets/ca0d5fbe-1a84-43b6-a395-b49faa7f10a8)
 - 스프링 컨테이너를 쓰면 동일한 객체를 반환한다. 싱글톤 패턴을 적용하지 않아도 싱글톤을 사용할 수 있다!
 
 > 참고: 스프링의 기본 빈 등록 방식은 싱글톤이지만, 싱글톤만 지원하는 것은 아니다.
@@ -288,7 +288,7 @@ void configurationDeep() {
 - AnnotaionConfigurationApplicationContext에 파라미터를 넘긴 값은 스프링 빈으로 등록된다. 따라서 AppConfig도 스프링 빈으로 등록된다.
 - 클래스 명에 xxxCGLIB가 붙는데 이것은 스프링이 CGLIB라는 바이트코드 조작 라이브러리를 사용해서 AppConfig 클래스를 상속받은 임의의 다른 클래스를 만들고, 그 다른 클래스를 스프링 빈으로 등록한 것이다!
 
-![[Pasted image 20250121192155.png]]
+![Image](https://github.com/user-attachments/assets/9849f6bd-507d-4a93-8e36-fe8fa431df59)
 - AppConfig@CGLIB이 AppConfig를 상속하고 있다.
 - AppConfig@CGLIB이 싱글톤이 보장되도록 해준다.
 
