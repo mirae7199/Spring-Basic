@@ -51,18 +51,18 @@ assertThat(memberService).isInstanceOf(MemberService.class);
 ### 컴포넌트 스캔과 의존관계 자동 주입 그림으로 알아보기
 
 **1. @ComponentScan**
-![[Pasted image 20250122131251.png]]
+![Image](https://github.com/user-attachments/assets/062423a9-0c6f-4c9c-9c23-e4fe49621a5e)
 - @ComponentScan이 클래스마다 돌면서 @Component가 붙은 클래스를 스프링 빈으로 등록한다.
 	- 빈 이름은 클래스 명으로 하며 맨 앞글자만 소문자를 사용한다.
 	- 만약 스프링 빈의 이름을 직접 지정하고 싶으면 @Component(“memberService2”) 이런식으로 이름을 부여하면 된다.
 
 **2. @Autowired 의존관계 자동 주입**
-![[Pasted image 20250122132007.png]]
+![Image](https://github.com/user-attachments/assets/72c830c8-43e3-40cb-9c21-f5527c345d58)
 - 생성자에 @Autowired를 지정하면, 스프링 컨테이너가 자동으로 스프링 빈을 찾아서 자동으로 주입해준다.
 - 기본 조회 전략은 타입이 같은 빈을 찾아서 주입한다.
 	- getBean(MemberRepsitory.class)와 동일하다고 이해하면 됨.
 
-![[Pasted image 20250122132613.png]]
+![Image](https://github.com/user-attachments/assets/d3aa84a6-b0ec-4095-a2bc-c893e7d8a39b)
 - 생성자에 파라미터가 몇 개든 스프링 빈에서 찾아서 주입해준다.
 
 컴포넌트 스캔 대상
