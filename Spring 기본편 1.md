@@ -213,6 +213,13 @@ public class OrderApp {
     }
 ~~~
 
+**실행 결과**
+~~~
+order = Order{memberId=1, itemName='itemA', itemPrice=10000, discountPrice=1000}
+order.calculatePrice = 9000
+~~~
+실행결과를 보면 할인 정책이 잘 실행된 것을 알 수 있다.
+
 **문제점 정리**
 - MemberServiceImpl, OrderServiceImpl 각각의 코드에서 memberRespository를 생성해서 회원을 저장하고 주문을 생성하니 서로 다른 저장소 객체에 저장하고 있었다. 
 - 그러니 주문을 생성하더라도 member가 없어서 nullpointException이 뜨는게 아닌가
