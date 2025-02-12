@@ -25,7 +25,7 @@ public class RateDiscountPolicy implements DiscountPolicy {
 **새로운 할인 정책 적용하기**
 ~~~ java
 public class OrderServiceImpl implements OrderService {
- //    private final DiscountPolicy discountPolicy = new //FixDiscountPolicy();
+ //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 
      private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
  }
